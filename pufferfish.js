@@ -1,0 +1,1 @@
+"use strict";(()=>{function e(){var _a;let elements=document.querySelectorAll("[p-click]");for(let i in elements){if(typeof elements[i]!="object")continue;let code=(_a=elements[i].getAttribute("p-click"))!==null&&_a!==void 0?_a:"";elements[i].addEventListener("click",()=>eval(code)),elements[i].removeAttribute("p-click")}}window.Puffer={render(){e()}};})();
