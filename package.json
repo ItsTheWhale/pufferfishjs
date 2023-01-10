@@ -4,7 +4,8 @@
   "description": "A minimalistic web framework",
   "main": "none",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx esbuild src/main.js --bundle --minify --outfile=pufferfish.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ItsTheWhale/pufferfishjs/issues"
   },
-  "homepage": "https://github.com/ItsTheWhale/pufferfishjs#readme"
+  "homepage": "https://github.com/ItsTheWhale/pufferfishjs#readme",
+  "devDependencies": {
+    "esbuild": "0.16.16"
+  }
 }
