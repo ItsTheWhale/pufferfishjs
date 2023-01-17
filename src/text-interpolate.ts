@@ -4,7 +4,7 @@ export function handleTextInterpolation() {
 
     let n, a = []
     let walk = document.createTreeWalker(
-        document.querySelector("html") ?? document.createElement("html"), 
+        document, 
         NodeFilter.SHOW_TEXT, 
         null
     );
