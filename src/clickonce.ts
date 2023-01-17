@@ -4,7 +4,7 @@ export function handleClickOnce() {
         if (typeof(elements[i]) !== "object") continue;
         const code = elements[i].getAttribute("p-clickonce") ?? "";
         function listenerFunction() {
-            eval(code);
+            window.eval(code);
             elements[i].removeEventListener("click", listenerFunction);
         }
         elements[i].addEventListener("click", listenerFunction);
