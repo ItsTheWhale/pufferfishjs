@@ -10,3 +10,8 @@ window.Puffer = {
         handleTextInterpolation();
     }
 };
+
+window.addEventListener("load", () => {
+    // @ts-ignore
+    window.Puffer.render();
+});
