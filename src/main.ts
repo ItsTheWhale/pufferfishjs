@@ -9,6 +9,7 @@ window.Puffer = {
         handleClick();
         handleClickOnce();
         handleTextInterpolation();
+        handleAttributeInterpolation();
     }
 };
 
