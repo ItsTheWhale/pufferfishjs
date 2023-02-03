@@ -1,11 +1,13 @@
 export function handleTextInterpolation() {
-    const searchRegEx = /(?<!\\){{[^}]+}}/g;
+    const searchRegEx = /\\?{{[^}]+}}/g;
+    const interpolateRegEx = /(?<!\\){{[^}]+}}/g;
+    const escapedRegEx = /\\{{[^}]+}}/g;
     let textNodes = [];
 
     let n, a = []
     let walk = document.createTreeWalker(
-        document, 
-        NodeFilter.SHOW_TEXT, 
+        document,
+        NodeFilter.SHOW_TEXT,
         null
     );
     while (n = walk.nextNode()) textNodes.push(n);
@@ -18,7 +20,8 @@ export function handleTextInterpolation() {
         const matches: any = text.match(searchRegEx);
 
         for (const j in matches) {
-            textNodes[i].textContent = textNodes[i].textContent?.replace(matches[j], (window[matches[j].slice(2, -2).trim()] ?? "") + "") ?? "";
+            if (matches[j].match(interpolateRegEx)) textNodes[i].textContent = textNodes[i].textContent?.replace(matches[j], (window[matches[j].slice(2, -2).trim()] ?? "") + "") ?? "";
+            else if (matches[j].match(escapedRegEx)) textNodes[i].textContent = textNodes[i].textContent?.replace(matches[j], matches[j].substring(1) ?? "") ?? "";
         }
     }
 }
