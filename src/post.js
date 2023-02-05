@@ -11,6 +11,7 @@ export function handlePost() {
             xhr.open("POST", postUrl);
             xhr.send();
         });
+        elements[i].removeAttribute("p-post");
     }
 }
 ;

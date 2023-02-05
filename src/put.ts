@@ -12,5 +12,7 @@ export function handlePut() {
             xhr.open("PUT", postUrl);
             xhr.send();
         });
+
+        elements[i].removeAttribute("p-put");
     }
 };

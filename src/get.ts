@@ -12,5 +12,7 @@ export function handleGet() {
             xhr.open("GET", postUrl);
             xhr.send();
         });
+
+        elements[i].removeAttribute("p-get");
     }
 };
