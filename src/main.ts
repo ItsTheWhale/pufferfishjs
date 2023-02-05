@@ -1,25 +1,13 @@
-import { handleClick } from "./click.js";
-import { handleClickOnce } from "./clickonce.js";
-import { handleTextInterpolation } from "./text-interpolate.js";
-import { handleAttributeInterpolation } from "./attribute-interpolate.js";
-import { handlePost } from "./post.js";
-import { handleGet } from "./get.js";
-import { handlePut } from "./put.js";
-import { handlePatch  } from "./patch.js";
-import { handleDelete } from "./delete.js";
+import { handleOnClick } from "./onclick/onclick.js";
+import { handleInterpolate } from "./interpolate/interpolate.js";
+import { handleHttp } from "./http/http.js";
 
 // @ts-ignore
 window.Puffer = {
     render(): void {
-        handleClick();
-        handleClickOnce();
-        handleTextInterpolation();
-        handleAttributeInterpolation();
-        handlePost();
-        handleGet();
-        handlePut();
-        handlePatch();
-        handleDelete();
+        handleOnClick();
+        handleInterpolate();
+        handleHttp();
     }
 };
 
