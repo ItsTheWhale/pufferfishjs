@@ -5,6 +5,7 @@ import { handleAttributeInterpolation } from "./attribute-interpolate.js";
 import { handlePost } from "./post.js";
 import { handleGet } from "./get.js";
 import { handlePut } from "./put.js";
+import { handlePatch } from "./patch.js";
 // @ts-ignore
 window.Puffer = {
     render() {
@@ -15,6 +16,7 @@ window.Puffer = {
         handlePost();
         handleGet();
         handlePut();
+        handlePatch();
     }
 };
 window.addEventListener("load", () => {
