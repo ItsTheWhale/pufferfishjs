@@ -6,6 +6,7 @@ import { handlePost } from "./post.js";
 import { handleGet } from "./get.js";
 import { handlePut } from "./put.js";
 import { handlePatch } from "./patch.js";
+import { handleDelete } from "./delete.js";
 // @ts-ignore
 window.Puffer = {
     render() {
@@ -17,6 +18,7 @@ window.Puffer = {
         handleGet();
         handlePut();
         handlePatch();
+        handleDelete();
     }
 };
 window.addEventListener("load", () => {
