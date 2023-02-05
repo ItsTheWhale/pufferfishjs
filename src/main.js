@@ -4,6 +4,7 @@ import { handleTextInterpolation } from "./text-interpolate.js";
 import { handleAttributeInterpolation } from "./attribute-interpolate.js";
 import { handlePost } from "./post.js";
 import { handleGet } from "./get.js";
+import { handlePut } from "./put.js";
 // @ts-ignore
 window.Puffer = {
     render() {
@@ -13,6 +14,7 @@ window.Puffer = {
         handleAttributeInterpolation();
         handlePost();
         handleGet();
+        handlePut();
     }
 };
 window.addEventListener("load", () => {
