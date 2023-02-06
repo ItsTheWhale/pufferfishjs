@@ -1,26 +1,30 @@
 export function handleTrigger(element: Element, callback: Function) {
-    let trigger = "click";
+    let trigger = [];
     let once = false;
-
-    switch (element.tagName) {
-        case "input":
-            trigger = "change";
-            break;
-        case "textarea":
-            trigger = "change";
-            break;
-        case "form":
-            trigger = "submit";
-            break;
-        default:
-            trigger = "click";
-    }
 
     if (element.getAttribute("p-trigger")) element.getAttribute("p-trigger")?.split(/ /)
         .forEach(attr => {
             if (attr.toLowerCase() === "once") once = true;
-            else trigger = attr;
+            else trigger.push(attr);
         });
 
-    element.addEventListener(trigger, callback as EventListener, { once });
+    if (trigger.length === 0) {
+        switch (element.tagName) {
+            case "input":
+                trigger.push("change");
+                break;
+            case "textarea":
+                trigger.push("change");
+                break;
+            case "form":
+                trigger.push("submit");
+                break;
+            default:
+                trigger.push("click");
+        }
+    }
+
+    for (let i in trigger) {
+        element.addEventListener(trigger[i], callback as EventListener, { once });
+    }
 }
