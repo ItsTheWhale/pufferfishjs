@@ -1,12 +1,10 @@
-import { handleOnClick } from "./onclick/onclick.js";
-import { handleInterpolate } from "./interpolate/interpolate.js";
-import { handleHttp } from "./http/http.js";
-import { handleEval } from "./eval/eval.js";
+import { handleInterpolate } from "./interpolate/handleinterpolate.js";
+import { handleHttp } from "./http/handlehttp.js";
+import { handleEval } from "./eval/handleeval.js";
 
 // @ts-ignore
 window.Puffer = {
     render(): void {
-        handleOnClick();
         handleInterpolate();
         handleHttp();
         handleEval();

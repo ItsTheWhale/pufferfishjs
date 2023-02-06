@@ -1,6 +1,6 @@
 import { handleTrigger } from "../trigger/trigger.js";
 
-export function handleEval() {
+export function handleEvalCode() {
     const elements = document.querySelectorAll("[p-eval]");
     for (const i in elements) {
         if (typeof (elements[i]) !== "object") continue;
@@ -8,7 +8,7 @@ export function handleEval() {
         const code = elements[i].getAttribute("p-eval") ?? "";
 
         handleTrigger(elements[i], () => {
-            eval(code);
+            window.eval(code);
         });
 
         elements[i].removeAttribute("p-eval");
