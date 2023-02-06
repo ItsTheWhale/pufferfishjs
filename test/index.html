@@ -9,6 +9,7 @@
     <script defer type="text/javascript" src="test.js"></script>
 </head>
 <body>
+    <p p-eval="alert('p-eval')" p-trigger="click">p-eval</p>
     <p p-click="alert('p-click')">p-click</p>
     <p p-clickonce="alert('p-clickonce')">p-clickonce</p>
     <p>{{ textInterpolate }} \{{ noTextInterpolate }}</p>
@@ -18,6 +19,6 @@
     <p p-put="https://example.com" p-trigger="click">p-put</p>
     <p p-patch="https://example.com" p-trigger="click">p-patch</p>
     <p p-delete="https://example.com" p-trigger="click">p-delete</p>
-    <p p-eval="console.log('p-eval')" p-trigger="click">p-eval</p>
+    <p p-eval="alert('p-trigger')" p-trigger="click mouseleave once">p-trigger</p>
 </body>
 </html>
