@@ -1,4 +1,4 @@
-import { handleTrigger } from "../trigger.js";
+import { handleTrigger } from "../trigger/trigger.js";
 export function handlePost() {
     var _a;
     const elements = document.querySelectorAll("[p-post]");

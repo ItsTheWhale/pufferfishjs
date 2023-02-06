@@ -1,4 +1,4 @@
-import { handleTrigger } from "../trigger.js";
+import { handleTrigger } from "../trigger/trigger.js";
 
 export function handlePut() {
     const elements = document.querySelectorAll("[p-put]");
