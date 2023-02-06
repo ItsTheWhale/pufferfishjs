@@ -1,6 +1,7 @@
 import { handleOnClick } from "./onclick/onclick.js";
 import { handleInterpolate } from "./interpolate/interpolate.js";
 import { handleHttp } from "./http/http.js";
+import { handleEval } from "./eval/eval.js";
 
 // @ts-ignore
 window.Puffer = {
@@ -8,6 +9,7 @@ window.Puffer = {
         handleOnClick();
         handleInterpolate();
         handleHttp();
+        handleEval();
     }
 };
 
