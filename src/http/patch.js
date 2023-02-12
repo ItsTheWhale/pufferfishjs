@@ -10,7 +10,7 @@ export function handlePatch() {
             const xhr = new XMLHttpRequest();
             xhr.open("PATCH", postUrl);
             xhr.send();
-        });
+        }, "patch");
         elements[i].removeAttribute("p-patch");
     }
 }

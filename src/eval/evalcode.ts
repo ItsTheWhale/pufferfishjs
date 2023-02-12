@@ -9,7 +9,7 @@ export function handleEvalCode() {
 
         handleTrigger(elements[i], () => {
             window.eval(code);
-        });
+        }, "eval");
 
         elements[i].removeAttribute("p-eval");
     }

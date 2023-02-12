@@ -11,7 +11,7 @@ export function handleGet() {
             const xhr = new XMLHttpRequest();
             xhr.open("GET", postUrl);
             xhr.send();
-        });
+        }, "get");
 
         elements[i].removeAttribute("p-get");
     }

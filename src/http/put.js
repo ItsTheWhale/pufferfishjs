@@ -10,7 +10,7 @@ export function handlePut() {
             const xhr = new XMLHttpRequest();
             xhr.open("PUT", postUrl);
             xhr.send();
-        });
+        }, "put");
         elements[i].removeAttribute("p-put");
     }
 }

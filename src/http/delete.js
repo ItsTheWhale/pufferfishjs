@@ -10,7 +10,7 @@ export function handleDelete() {
             const xhr = new XMLHttpRequest();
             xhr.open("DELETE", postUrl);
             xhr.send();
-        });
+        }, "delete");
         elements[i].removeAttribute("p-delete");
     }
 }

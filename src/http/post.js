@@ -10,7 +10,7 @@ export function handlePost() {
             const xhr = new XMLHttpRequest();
             xhr.open("POST", postUrl);
             xhr.send();
-        });
+        }, "post");
         elements[i].removeAttribute("p-post");
     }
 }

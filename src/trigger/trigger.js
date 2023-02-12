@@ -1,11 +1,23 @@
-export function handleTrigger(element, callback) {
-    var _a;
+export function handleTrigger(element, callback, name) {
+    var _a, _b;
     let trigger = [];
     let once = false;
-    if (element.getAttribute("p-trigger"))
-        (_a = element.getAttribute("p-trigger")) === null || _a === void 0 ? void 0 : _a.split(/ /).forEach(attr => {
+    let timeout = 0;
+    if (name !== undefined && element.getAttribute("p-trigger-" + name))
+        (_a = element.getAttribute("p-trigger-" + name)) === null || _a === void 0 ? void 0 : _a.split(/ /).forEach(attr => {
             if (attr.toLowerCase() === "once")
                 once = true;
+            else if (attr.toLowerCase().startsWith("timeout:"))
+                timeout = Number(attr.substring(8));
+            else
+                trigger.push(attr);
+        });
+    else if (element.getAttribute("p-trigger"))
+        (_b = element.getAttribute("p-trigger")) === null || _b === void 0 ? void 0 : _b.split(/ /).forEach(attr => {
+            if (attr.toLowerCase() === "once")
+                once = true;
+            else if (attr.toLowerCase().startsWith("timeout:"))
+                timeout = Number(attr.substring(8));
             else
                 trigger.push(attr);
         });
@@ -25,6 +37,8 @@ export function handleTrigger(element, callback) {
         }
     }
     for (let i in trigger) {
-        element.addEventListener(trigger[i], callback, { once });
+        element.addEventListener(trigger[i], () => {
+            setTimeout(callback, timeout);
+        }, { once });
     }
 }

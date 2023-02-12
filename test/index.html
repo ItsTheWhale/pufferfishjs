@@ -19,6 +19,7 @@
     <p p-put="https://example.com" p-trigger="click">p-put</p>
     <p p-patch="https://example.com" p-trigger="click">p-patch</p>
     <p p-delete="https://example.com" p-trigger="click">p-delete</p>
-    <p p-eval="alert('p-trigger')" p-trigger="click mouseleave once">p-trigger</p>
+    <p p-eval="alert('p-trigger')" p-trigger="click mouseleave once timeout:1000">p-trigger</p>
+    <p p-eval="alert('p-trigger-<for>')" p-trigger-eval="click" p-trigger="mouseleave">p-trigger-&lt;for&gt;</p>
 </body>
 </html>

@@ -8,7 +8,7 @@ export function handleEvalCode() {
         const code = (_a = elements[i].getAttribute("p-eval")) !== null && _a !== void 0 ? _a : "";
         handleTrigger(elements[i], () => {
             window.eval(code);
-        });
+        }, "eval");
         elements[i].removeAttribute("p-eval");
     }
 }
