@@ -9,17 +9,24 @@
     <script defer type="text/javascript" src="test.js"></script>
 </head>
 <body>
+    <h1>eval</h1>
     <p p-eval="alert('p-eval')" p-trigger="click">p-eval</p>
     <p p-click="alert('p-click')">p-click</p>
     <p p-clickonce="alert('p-clickonce')">p-clickonce</p>
-    <p>{{ textInterpolate }} \{{ noTextInterpolate }}</p>
+    <h1>interpolate</h1>
+    <p>{{ textInterpolate }}</p>
+    <p>\{{ noTextInterpolate }}</p>
     <p id="{{ attributeInterpolate }}">attributeInterpolate</p>
+    <h1>http</h1>
     <p p-post="https://example.com" p-trigger="click">p-post</p>
     <p p-get="https://example.com" p-trigger="click">p-get</p>
     <p p-put="https://example.com" p-trigger="click">p-put</p>
     <p p-patch="https://example.com" p-trigger="click">p-patch</p>
     <p p-delete="https://example.com" p-trigger="click">p-delete</p>
-    <p p-eval="alert('p-trigger')" p-trigger="click mouseleave once timeout:1000">p-trigger</p>
+    <h1>trigger</h1>
+    <p p-eval="alert('p-trigger')" p-trigger="click">p-trigger</p>
+    <p p-eval="alert('p-trigger once')" p-trigger="click once">p-trigger once</p>
+    <p p-eval="alert('p-trigger timeout')" p-trigger="click timeout:1000">p-trigger timeout</p>
     <p p-eval="alert('p-trigger-<for>')" p-trigger-eval="click" p-trigger="mouseleave">p-trigger-&lt;for&gt;</p>
 </body>
 </html>
